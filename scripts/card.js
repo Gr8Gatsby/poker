@@ -5,6 +5,10 @@
     the values for a card are valid.
 */
 class Card {
+  // Create static values for suits and card values
+  static suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+  static values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+
   constructor (suit, value) {
     this.suit = suit;
     this.value = value;
