@@ -9,8 +9,32 @@ class Card {
   static suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
   static values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
 
+  // Create properties values for suit and value
+  _suit = null;
+  _value = null;
+
+  // Create a card
   constructor (suit, value) {
     this.suit = suit;
     this.value = value;
+  }
+
+  // Check for a valid suit before saving
+  set suit (suit) {
+    if (suits[suit]) {
+      // Found a matching suit
+      this._suit = suit;
+    } else {
+      throw new Error (`${suit} does not match a valid suit value for a card`);
+    }
+  }
+  // Check for a valid value before saving
+  set value (value) {
+    if (values[value]) {
+      // Found a matching value
+      this._value = value;
+    } else {
+      throw new Error (`${value} does not match a vaild value for a card`);
+    }
   }
 }
