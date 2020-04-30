@@ -10,22 +10,31 @@ class Deck {
 
   // Construct deck
   constructor () {
-    this.shuffle ();
+    this.initialize ();
   }
 
   // Shuffle method
   shuffle () {
-    for (let suit in Deck.suits) {
-      for (let value in Deck.values) {
-        this.deck.push (`${Deck.values[value]} of ${Deck.suits[suit]}`);
-      }
-    }
+   
   }
 
   // Initailize method
-  initialize () {}
+  initialize () {
+    for (let suit in Deck.suits) {
+        for (let value in Deck.values) {
+          this.deck.push (new Card(Deck.suits[suit], Deck.values[value]));
+        }
+      }
+  }
 
   // Deal method
 }
 
-class Hand {}
+/*
+    Class: Card
+    Description: This class will store the basic data for 
+    a card, including suit, and value. It will ensure that 
+    the values for a card are valid.
+*/
+
+  
